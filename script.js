@@ -15,7 +15,7 @@ console.log(document.querySelector('.guess').value);
 */
 const secretNumber = Math.trunc(Math.random() * 20) + 1;
 //if we erase this line the guest number disapier  and only show in the screen the question mark
-document.querySelector('.number').textContent = secretNumber;
+//document.querySelector('.number').textContent = secretNumber;
 let score = 20;
 
 document.querySelector('.check').addEventListener('click', function () {
@@ -26,8 +26,11 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('.message').textContent = '⛔ No Number! ⛔ ';
   } else if (guess === secretNumber) {
     document.querySelector('.message').textContent = '👍 Correct Number!  ';
+    document.querySelector('.number').textContent = secretNumber;
+    document.querySelector(`body`).style.backgroundColor = `green`;
+    document.querySelector(`.number`).style.width = `30rem`;
     // score = score + 1;
-    score++;
+    //score++;
     document.querySelector('.score').textContent = score;
   } else if (guess > secretNumber) {
     if (score > 1) {
@@ -50,4 +53,16 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.score').textContent = 0;
     }
   }
+});
+
+document.querySelector(`.again`).addEventListener(`click`, function () {
+  score = 20;
+  secretNumber;
+  document.querySelector(`.number`).textContent = `?`;
+  document.querySelector('.message').textContent = 'start guessing......';
+  document.querySelector('.score').textContent = score;
+
+  document.querySelector('.guess').value = ``;
+  document.querySelector(`.number`).style.width = `15rem`;
+  document.querySelector(`body`).style.backgroundColor = `black`;
 });
