@@ -18,10 +18,12 @@ const secretNumber = Math.trunc(Math.random() * 20) + 1;
 //document.querySelector('.number').textContent = secretNumber;
 let score = 20;
 
+//add event in the button to check the number
 document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
   console.log(guess, typeof guess);
 
+  //if the numbre is wrong or correct validation
   if (!guess) {
     document.querySelector('.message').textContent = '⛔ No Number! ⛔ ';
   } else if (guess === secretNumber) {
