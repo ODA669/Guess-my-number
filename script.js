@@ -17,6 +17,7 @@ const secretNumber = Math.trunc(Math.random() * 20) + 1;
 //if we erase this line the guest number disapier  and only show in the screen the question mark
 //document.querySelector('.number').textContent = secretNumber;
 let score = 20;
+let highscore = 0;
 
 //add event in the button to check the number
 document.querySelector('.check').addEventListener('click', function () {
@@ -31,6 +32,10 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('.number').textContent = secretNumber;
     document.querySelector(`body`).style.backgroundColor = `green`;
     document.querySelector(`.number`).style.width = `30rem`;
+
+    if(score > highscore){
+      highscore = score;
+      document.querySelector(`.highscore`).textContent = highscore;
     // score = score + 1;
     //score++;
     document.querySelector('.score').textContent = score;
