@@ -1,4 +1,4 @@
-# Gues-my-number
+# Guess-my-number
 Project Gues my number
 
 this is a game  where you try find the hidden number!!!
